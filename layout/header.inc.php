@@ -1,15 +1,8 @@
 <?php
 
-	if (!isset($_SESSION)) {
-		session_start();
-	}
-
 	if ($inc !== true) {
 		header('Location: 404.php');
 	} else {
-
-		require_once('config/config.php');
-		require('config/functions.php');
 
 		if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
 			connect($_COOKIE['username'], $_COOKIE['password']);
@@ -17,7 +10,7 @@
 
 		if (!isset($root)) {
 			$root = dirname($_SERVER['SCRIPT_NAME']) . '/layout';
-		}
+	}
 
 ?>
 <!DOCTYPE html>
@@ -58,11 +51,8 @@
 		<div class="container">
 			<?php
 
-				if (isset($_SESSION['alert'])) {
-					foreach ($_SESSION['alert'] as $error) {
-						echo '<div class="alert alert-' . $error['type'] . '">' . $error['message'] . '</div>';
-					}
-					unset($_SESSION['alert']);
+				if (isset($alert)) {
+					echo $alert;
 				}
 
 			?>

@@ -1,5 +1,10 @@
+html {
+	min-height: 100%;
+}
+
 body {
 	padding-top: 70px;
+	min-height: inherit;
 }
 
 .jumbotron {

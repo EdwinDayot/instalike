@@ -2,8 +2,10 @@
 
 	$inc = true;
 	$title_for_layout = 'Log In';
-	include('layout/header.inc.php');
+	require_once('config/config.php');
+	require('config/functions.php');
 	require('functions/login.php');
+	include('layout/header.inc.php');
 	if (!isset($_SESSION['username'])) {
 		
 	

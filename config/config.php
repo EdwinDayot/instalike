@@ -1,5 +1,9 @@
 <?php
 
+	if (!isset($_SESSION)) {
+		session_start();
+	}
+
 	if ($_SERVER['SERVER_NAME'] == 'localhost') {
 		define('BASE_URL', 'http://localhost/instalike');
 	} elseif ($_SERVER['SERVER_NAME'] == 'ns366377.ovh.net') {
